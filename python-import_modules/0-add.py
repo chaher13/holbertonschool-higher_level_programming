@@ -2,7 +2,8 @@
 a = 1
 b = 2
 
-import add_0
+from add_0 import add as add_function
 
-result = add_0.add(a, b)
-print("{} + {} = {}".format(a, b, result))
+if __name__ == "__main__":
+    result = add_function(a, b)
+    print("{} + {} = {}".format(a, b, result))
