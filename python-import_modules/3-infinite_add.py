@@ -7,4 +7,4 @@ if __name__ == "__main__":
     for i in range(1, len(argv)):
         x = int(argv[i])
         resultat = resultat + x
-        print(resultat)
+    print(resultat)
