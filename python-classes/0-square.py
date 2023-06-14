@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
 class Square:
-        """
-    This class represents a square.
+    """A class representing a square."""
 
-    Attributes:
-        None
+    def __init__(self):
 
-    Methods:
-        None
-    """
-    pass
+        """Initialize the Square class."""
+
+        pass
