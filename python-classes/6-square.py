@@ -8,20 +8,21 @@ class Square:
     Attributes:
         __size (int): The size of the square.
     """
-def __init__(self, size=0, position=(0, 0)):
-    """
-    Initializes a new instance of the Square class.
+    def __init__(self, size=0, position=(0, 0)):
+        """
+        Initializes a new instance of the Square class.
 
-    Args:
-    size (int): The size of the square. Default is 0.
-    position (tuple): The position of the square. Default is (0, 0).
+        Args:
+        size (int): The size of the square. Default is 0.
+        position (tuple): The position of the square. Default is (0, 0).
 
-    Raises:
-    TypeError: If size is not an integer or position is not a tuple of two positive integers.
-    ValueError: If size is less than 0 or position coordinates are less than 0.
-    """
-            self.__size = size
-            self.__position = position
+        Raises:
+        TypeError: If size is not an integer or position is not a tuple of two\
+        positive integers.
+        ValueError: If size is less than 0 or positions are less than 0.
+        """
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """
