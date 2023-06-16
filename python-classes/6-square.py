@@ -55,6 +55,35 @@ class Square:
         else:
             self.__size = value
 
+    @property
+    def position(self):
+        """
+        tuple: The position of the square.
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """
+        Sets the position of the square.
+
+        Args:
+        value (tuple): The position of the square.
+
+        Raises:
+        TypeError: If value is not a tuple of two positive integers.
+        ValueError: If position coordinates are less than 0.
+        """
+        if (
+                not isinstance(value, tuple) or len(value) != 2
+                or not isinstance(value[0], int)
+                or not isinstance(value[1], int)
+                or value[0] < 0
+                or value[1] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
+
     def my_print(self):
         """
         Prints a representation of the square.
