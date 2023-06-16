@@ -21,8 +21,8 @@ class Square:
         positive integers.
         ValueError: If size is less than 0 or positions are less than 0.
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """
