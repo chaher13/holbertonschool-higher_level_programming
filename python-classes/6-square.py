@@ -56,18 +56,6 @@ class Square:
             self.__size = value
 
     def my_print(self):
-
-        """
-        Prints a representation of the square using '#'.
-        """
-
-        if self.size == 0:
-            print()
-        else:
-            for i in range(self.__size):
-                print("#" * self.__size)
-
-    def my_print(self):
         """
         Prints a representation of the square.
         If size is 0, prints a newline.
