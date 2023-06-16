@@ -55,12 +55,12 @@ class Square:
         else:
             self.__size = value
 
-        def my_print(self):
-            """
-            Prints a representation of the square using '#'.
-            """
-            if self.size == 0:
-                print()
-            else:
-                for i in range(self.size):
-                    print("#" * self.size)
+    def my_print(self):
+    """
+    Prints a representation of the square using '#'.
+    """
+    if self.size == 0:
+        print()
+    else:
+        for i in range(self.__size):
+            print("#" * self.__size)
