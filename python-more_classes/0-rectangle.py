@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This class stands for a rectangle """
 
+
 class Rectangle:
     """
     This class Rectangle reprents represents an empty rectangle.
