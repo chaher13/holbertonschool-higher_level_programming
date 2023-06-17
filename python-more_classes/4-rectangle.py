@@ -133,4 +133,4 @@ class Rectangle:
         Returns:
         str: A string representation of the rectangle object.
         """
-        return f"Rectangle({self__width}, {self.height})"
+        return f"Rectangle({self.__width}, {self.__height})"
