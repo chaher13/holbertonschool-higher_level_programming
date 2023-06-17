@@ -1,10 +1,9 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """ This class stands for a rectangle """
-
 
 class Rectangle:
     """
-    This class reprents represents an empty rectangle.
+    This class Rectangle reprents represents an empty rectangle.
     """
     def __init__(self):
         """
