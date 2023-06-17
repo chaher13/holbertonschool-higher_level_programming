@@ -119,9 +119,9 @@ class Rectangle:
         Returns:
         str: A string representation of the rectangle.
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
         new_string_tag = ""
-        for i in range(self.__height):
-            new_string_tag += '#' * self.__width + "\n"
+        for i in range(self.height):
+            new_string_tag += '#' * self.width + "\n"
         return new_string_tag
