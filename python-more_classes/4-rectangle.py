@@ -20,7 +20,6 @@ class Rectangle:
     area(): Calculates the area of the rectangle.
     perimeter(): Calculates the perimeter of the rectangle.
     __str__(): Returns a string representation of the rectangle.
-    __repr__(): Returns a string representation of the rectangle object.
     """
     def __init__(self, width=0, height=0):
         """
@@ -104,7 +103,7 @@ class Rectangle:
         Returns:
         int: The perimeter of the rectangle.
         """
-        if self.__width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
 
@@ -121,16 +120,14 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        new_string_tag = ""
-        for i in range(self.__height):
-            new_string_tag += "#" * self.__width + "\n"
-        return new_string_tag
+        return "\n".join(["#" * self.__width] * self.__height)
 
     def __repr__(self):
         """
         Returns a string representation of the rectangle object.
 
         Returns:
-        str: A string representation of the rectangle object.
+            str: A string representation of the rectangle object.
         """
+
         return f"Rectangle({self.__width}, {self.__height})"
