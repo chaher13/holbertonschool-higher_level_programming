@@ -101,4 +101,6 @@ class Rectangle:
         Returns:
         int: The perimeter of the rectangle.
         """
+        if self.__width == 0 or self.height == 0:
+            return 0
         return (self.__width + self.__height) * 2
