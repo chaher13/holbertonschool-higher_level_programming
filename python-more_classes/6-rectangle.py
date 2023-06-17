@@ -22,6 +22,7 @@ class Rectangle:
     __str__(): Returns a string representation of the rectangle.
     """
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Initializes a new instance of the Rectangle class.
@@ -138,5 +139,5 @@ class Rectangle:
         """
         Prints a message when the rectangle object is deleted.
         """
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
