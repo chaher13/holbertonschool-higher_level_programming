@@ -23,6 +23,7 @@ class Rectangle:
     """
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """
         Initializes a new instance of the Rectangle class.
@@ -123,7 +124,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([print_symbol * self.__width] * self.__height)
+        return "\n".join([str(print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """
