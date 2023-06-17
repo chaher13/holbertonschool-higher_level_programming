@@ -33,7 +33,7 @@ class Rectangle:
         Raises:
         TypeError: If width or height is not an integer.
         ValueError: If width or height is less than 0.
-                """
+        """
         self.width = width
         self.height = height
 
@@ -125,12 +125,3 @@ class Rectangle:
         for i in range(self.__height):
             new_string_tag += '#' * self.__width + "\n"
         return new_string_tag
-
-    def __repr__(self):
-        """
-        Returns a string representation of the rectangle object.
-
-        Returns:
-        str: A string representation of the rectangle object.
-        """
-        return "<{} object at {}>".format(type(self).__name__, hex(id(self)))
