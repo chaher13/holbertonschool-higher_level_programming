@@ -113,7 +113,8 @@ class Rectangle:
         Returns a string representation of the rectangle.
 
         If width or height is 0, returns an empty string.
-        Otherwise, returns a string representation of the rectangle using '#' characters.
+        Otherwise, returns a string representation
+        of the rectangle using '#' characters.
 
         Returns:
         str: A string representation of the rectangle.
@@ -123,7 +124,7 @@ class Rectangle:
         new_string_tag = ""
         for i in range(self.__height):
             new_string_tag += '#' * self.__width + "\n"
-            return new_string_tag
+        return new_string_tag
 
     def __repr__(self):
         """
