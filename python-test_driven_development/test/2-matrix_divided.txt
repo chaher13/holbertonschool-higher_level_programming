@@ -1,0 +1,61 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix = [[1, 2, 3], [4, "5", 6], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5], [7.5, 8.5, 9.5]]
+>>> div = float('inf')
+>>> matrix_divided(matrix, div)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+>>> matrix = [[1, 2, 3], [4, float('nan'), 6], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[0.5, 1.0, 1.5], [2.0, nan, 3.0], [3.5, 4.0, 4.5]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = float('nan')
+>>> matrix_divided(matrix, div)
+[[nan, nan, nan], [nan, nan, nan], [nan, nan, nan]]
+
+>>> matrix = None
+>>> div = 3
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = None
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 't'
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
