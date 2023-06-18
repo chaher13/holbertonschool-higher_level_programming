@@ -1,30 +1,21 @@
 #!/usr/bin/python3
 """
-Function that prints a text with 2 new lines after
-each of these characters: ., ? and :
+This module implement the methode text_indentation.
 """
 
 
 def text_indentation(text):
     """
-    Function that prints a text with 2 new lines after
-    each of these characters: ., ? and :
+    This methode prints a text with 2 new lines after each of
+        these characters: '.', '?' and ':'.
+    text - the text to indente.
     """
-    punct = [".", "?", ":"]
-    if not isinstance(text, str):
+
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    new_line = True  # To keep track if a new line has already been printed
-    for i, char in enumerate(text):
-        if new_line and char == " ":
-            continue
-        if char in punct:
-            print(char, end="")
-            if i < len(text) - 1 and text[i+1] not in punct:
-                print("\n\n", end="")
-                new_line = True
-            else:
-                print("\n", end="")
-                new_line = False
-        else:
-            print(char, end="")
-            new_line = False
+
+    for delim in ".?:":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
+
+    print(text, end='')
