@@ -1,24 +1,18 @@
+#!/usr/bin/python3
+"""
+Adds two numbers and returns the result.
+    a (int or float): The first number.
+    b (int or float): The second number. Defaults to 98.
+"""
+
+
 def add_integer(a, b=98):
     """
-    Adds two integers or floats and returns the result as an integer.
-
-    Args:
-    a (int, float): The first number.
-    b (int, float): The second number. Default is 98.
-
-    Returns:
-    int: The sum of the two numbers as an integer.
-
-    Raises:
-    TypeError: If either `a` or `b` is not an integer or a float.
+    Adds two numbers and returns the result.
     """
-
     if not isinstance(a, (int, float)) or a is None:
-        raise TypeError("a must be an integer or a float")
+        raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)) or b is None:
-        raise TypeError("b must be an integer or a float")
+        raise TypeError("b must be an integer")
 
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    return int(a) + int(b)
