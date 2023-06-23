@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Write a class BaseGeometry"""
+"""Write an empty class BaseGeometry"""
 
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Write an class Square"""
+    """initialize the square"""
     def __init__(self, size):
         super().integer_validator("size", size)
         super().__init__(size, size)
@@ -16,4 +16,4 @@ class Square(Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        return f"[square] {self.__size}/{self.__size}"
+        return (f"[Square] {self.__size}/{self.__size}")
