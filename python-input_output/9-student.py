@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """A class Student that defines a student """
 
 
