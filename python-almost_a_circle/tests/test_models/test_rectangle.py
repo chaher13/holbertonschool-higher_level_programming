@@ -94,7 +94,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
 
-    def test_display_1(self):
+    def test_display_second(self):
         r1 = Rectangle(2, 3, 2, 2)
         expected_output = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(expected_output, self.get_display_output(r1))
