@@ -159,8 +159,8 @@ class Rectangle(Base):
         cell of the rectangle. The number of '#' printed will correspond to the
         width and height of the rectangle.
         """
-        for i in range(self.y)
-        print()
+        for i in range(self.y):
+            print()
         for j in range(self.height):
             print("" * self.x + "#" * self.width)
 
