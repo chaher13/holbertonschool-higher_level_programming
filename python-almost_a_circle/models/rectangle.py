@@ -176,21 +176,33 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -\
  {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Update the attributes of the Rectangle object with\
-        the provided arguments.
+        Updates the attributes of the rectangle.
 
         Args:
-        *args: The arguments to update the attributes.
-        The order should be as follows:
-               1st argument -> id attribute
-               2nd argument -> width attribute
-               3rd argument -> height attribute
-               4th argument -> x attribute
-               5th argument -> y attribute
-        """
-        attr = ["id", "width", "height", "x", "y"]
+            *args: Variable length positional arguments.
+        The order of the arguments should be:
+                - 1st argument: ID (optional)
+                - 2nd argument: Width (optional)
+                - 3rd argument: Height (optional)
+                - 4th argument: X-coordinate (optional)
+                - 5th argument: Y-coordinate (optional)
+            **kwargs: Keyword arguments represent the attributes to be updated.
+                Each key corresponds to an attribute of the rectangle.
 
-        for i, arg in enumerate(args):
-            setattr(self, attr[i], arg)
+        Notes:
+            - If positional arguments (*args) are provided and not empty,
+        they take precedence over keyword arguments (**kwargs).
+            - If keyword arguments (**kwargs) are provided,
+        they update the corresponding attributes.
+            - Argument order is important for positional arguments,
+        but not for keyword arguments.
+        """
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
