@@ -104,8 +104,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(expected_output, self.get_display_output(r2))
 
     def get_display_output(self, rectangle):
-        import sys
-        from io import StringIO
 
         saved_stdout = sys.stdout
         try:
