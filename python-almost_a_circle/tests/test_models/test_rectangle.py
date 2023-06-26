@@ -3,7 +3,7 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    def test_rectangle_creation(self):
+    def test_rectangle(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
@@ -25,7 +25,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.y, 0)
         self.assertEqual(r3.id, 25)
 
-    def test_getters_and_setters(self):
+    def test_setters(self):
         r = Rectangle(10, 5)
         r.width = 5
         r.height = 10
