@@ -70,5 +70,22 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_display(self):
+        r1 = Rectangle(4, 6)
+        expected_output = "####\n" * 6
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r2 = Rectangle(2, 2)
+        expected_output = "##\n" * 2
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r2.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 if __name__ == '__main__':
     unittest.main()
