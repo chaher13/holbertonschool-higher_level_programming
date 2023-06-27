@@ -80,10 +80,9 @@ class Square(Rectangle):
 
     def to_dictionary(self):
 
-        attr_dictionary = {
-                        'id': self.id,
-                        'size': self.width,
-                        'x': self.x,
-                        'y': self.y
-                    }
-        return attr_dictionary
+        return {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
+        }

@@ -201,11 +201,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
 
-        attrs_dictionary = {
-                        "id": self.id,
-                        "width": self.width,
-                        "height": self.height,
-                        "x": self.x,
-                        "y": self.y
-                    }
-        return attrs_dictionary
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
