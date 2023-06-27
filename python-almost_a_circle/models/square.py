@@ -70,11 +70,11 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
 
-        if args:
+        if args and len(args) > 0:
             attrs = ["id", "size", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attrs[i], arg)
-        elif kwargs and not args:
+        else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
@@ -82,8 +82,7 @@ class Square(Rectangle):
 
         attr_dictionary = {
                         'id': self.id,
-                        'width': self.width,
-                        'height': self.height,
+                        'size': self.width,
                         'x': self.x,
                         'y': self.y
                     }

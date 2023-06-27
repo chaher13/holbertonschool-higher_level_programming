@@ -199,7 +199,7 @@ class Rectangle(Base):
             - Argument order is important for positional arguments,
         but not for keyword arguments.
         """
-        if args:
+        if args and len(args) > 0:
             attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attrs[i], arg)
