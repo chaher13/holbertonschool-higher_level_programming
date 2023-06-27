@@ -190,15 +190,7 @@ class Rectangle(Base):
                 - 5th argument: Y-coordinate (optional)
             **kwargs: Keyword arguments represent the attributes to be updated.
                 Each key corresponds to an attribute of the rectangle.
-
-        Notes:
-            - If positional arguments (*args) are provided and not empty,
-        they take precedence over keyword arguments (**kwargs).
-            - If keyword arguments (**kwargs) are provided,
-        they update the corresponding attributes.
-            - Argument order is important for positional arguments,
-        but not for keyword arguments.
-        """
+       """
         if args and len(args) > 0:
             attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
@@ -206,3 +198,14 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+
+        attrs_dictionary = {
+                        "id": self.id,
+                        "width": self.width,
+                        "height": self.height,
+                        "x": self.x,
+                        "y": self.y
+                    }
+        return attrs_dictionary
