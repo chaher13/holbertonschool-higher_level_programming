@@ -74,10 +74,17 @@ class Square(Rectangle):
             attrs = ["id", "size", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attrs[i], arg)
-        else:
+        elif kwargs and not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
     def to_dictionary(self):
 
-        return self.__dict__
+        attr_dictionary = {
+                        'id': self.id,
+                        'width': self.width,
+                        'height': self.height,
+                        'x': self.x,
+                        'y': self.y
+                    }
+        return attr_dictionary
