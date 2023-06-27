@@ -200,7 +200,11 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-
+        """
+        Returns the dictionary representation of the Rectangle instance.
+        Returns:
+            dict: Dictionary representation of the Rectangle instance.
+        """
         return {
             "id": self.id,
             "width": self.width,
