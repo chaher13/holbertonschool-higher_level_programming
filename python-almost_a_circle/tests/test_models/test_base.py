@@ -8,6 +8,7 @@ import json
 
 class TestBase(unittest.TestCase):
     def test_iterid(self):
+        Base._Base__nb_objects = 0
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -39,37 +40,37 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             json_content = json.load(file)
 
-        expected_json = [{"y": 8, "x": 2, "id": 4, "width": 10, "height": 7},\
+        expected_json = [{"y": 8, "x": 2, "id": 4, "width": 10, "height": 7},
                          {"y": 0, "x": 0, "id": 5, "width": 2, "height": 4}]
         self.assertEqual(json_content, expected_json)
 
         os.remove("Rectangle.json")
 
-        def test_from_json_string(self):
-            list_input = [
-                {'id': 89, 'width': 10, 'height': 4},
-                {'id': 7, 'width': 1, 'height': 7}
+    def test_from_json_string(self):
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
             ]
-            json_list_input = Rectangle.to_json_string(list_input)
-            list_output = Rectangle.from_json_string(json_list_input)
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
 
-            self.assertEqual(type(list_input), list)
-            self.assertEqual(type(json_list_input), str)
-            self.assertEqual(type(list_output), list)
-            self.assertEqual(list_output, list_input)
+        self.assertEqual(type(list_input), list)
+        self.assertEqual(type(json_list_input), str)
+        self.assertEqual(type(list_output), list)
+        self.assertEqual(list_output, list_input)
 
-        def test_create_rectangle(self):
+    def test_create_rectangle(self):
 
-            r1 = Rectangle(3, 5, 1)
-            r1_dictionary = r1.to_dictionary()
-            r2 = Rectangle.create(**r1_dictionary)
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
 
-            self.assertEqual(r1.width, r2.width)
-            self.assertEqual(r1.height, r2.height)
-            self.assertEqual(r1.x, r2.x)
-            self.assertEqual(r1.y, r2.y)
+        self.assertEqual(r1.width, r2.width)
+        self.assertEqual(r1.height, r2.height)
+        self.assertEqual(r1.x, r2.x)
+        self.assertEqual(r1.y, r2.y)
 
-            self.assertIsNot(r1, r2)
+        self.assertIsNot(r1, r2)
 
 
 if __name__ == '__main__':
