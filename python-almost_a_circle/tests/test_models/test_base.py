@@ -1,22 +1,17 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 
 """
 Unittest for Base Class
 # run with python3 -m unittest discover tests
 # run with python3 -m unittest tests/test_models/test_base.py
 """
-=
+
 """Defines a class BaseModelTest"""
 
 
 import json
 import unittest
 import json
-=======
-# test_base.py
-
->>>>>>> 654d98c627295bdba108cc3fe7f2822bc6225a11
 import os
 import unittest
 from models.base import Base
@@ -91,18 +86,17 @@ class TestBase_instantiation(unittest.TestCase):
     def test_range_id(self):
         self.assertEqual(range(5), Base(range(5)).id)
 
-<<<<<<< HEAD
+
 class TestBase(unittest.TestCase):
     """Tests for models/base.py"""
     def setUp(self):
         pass
-=======
+
     def test_bytes_id(self):
         self.assertEqual(b'Python', Base(b'Python').id)
 
     def test_bytearray_id(self):
         self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
->>>>>>> 654d98c627295bdba108cc3fe7f2822bc6225a11
 
     def test_memoryview_id(self):
         self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
@@ -363,7 +357,6 @@ class TestBase_load_from_file(unittest.TestCase):
         except IOError:
             pass
 
-<<<<<<< HEAD
     def test_create(self):
         """ Test create method """
         r1 = Rectangle(3, 5, 1)
@@ -372,7 +365,7 @@ class TestBase_load_from_file(unittest.TestCase):
         self.assertEqual(str(r1), str(r2))
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
-=======
+
     def test_load_from_file_first_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
@@ -426,4 +419,3 @@ class TestBase_load_from_file(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
->>>>>>> 654d98c627295bdba108cc3fe7f2822bc6225a11
