@@ -1,78 +1,72 @@
 #!/usr/bin/python3
+"""
+Unittest for base module.
+Test cases for base class.
+"""
 
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
-import sys
-import os
-import json
+from models.square import Square
 
 
-class TestBase(unittest.TestCase):
-    def test_iterid(self):
+class TestBaseClass(unittest.TestCase):
+    """A test class created to run tests for Base class"""
+
+    def setUp(self):
         Base._Base__nb_objects = 0
+
+    def test_0_id_None(self):
+        '''Test for id with None argument passed'''
+        b1 = Base(None)
+        self.assertEqual(b1.id, 1)
+
+    def test_1_id(self):
+        '''Test to check for id'''
         b1 = Base()
         b2 = Base()
-        b3 = Base()
-
+        b3 = Base(11)
+        b4 = Base(-12)
+        b5 = Base(0)
+        b6 = Base(1.1)
+        b7 = Base()
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
+        self.assertEqual(b3.id, 11)
+        self.assertEqual(b4.id, -12)
+        self.assertEqual(b5.id, 0)
+        self.assertEqual(b6.id, 1.1)
+        self.assertEqual(b7.id, 3)
 
-    def test_explicitid(self):
-        b4 = Base(12)
-        self.assertEqual(b4.id, 12)
+    def test_2_id_single(self):
+        '''Test for single instance creation with id'''
+        b1 = Base(3)
+        self.assertEqual(b1.id, 3)
 
-    def test_to_json_string(self):
-        r1 = Rectangle(10, 7, 2, 8)
-        dictionary = r1.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
+    def test_3_id_multi(self):
+        '''Test for multiple instance creation with id'''
+        b1 = Base(3)
+        self.assertEqual(b1.id, 3)
+        b2 = Base(4)
+        self.assertEqual(b2.id, 4)
 
-        self.assertIsInstance(json_dictionary, str)
-        expected_json = '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]'
-        self.assertEqual(json_dictionary, expected_json)
+    def test_4_id_string(self):
+        '''Test for string argument'''
+        b1 = Base("foo")
+        self.assertEqual(b1.id, "foo")
 
-    def test_save_to_file(self):
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        Rectangle.save_to_file([r1, r2])
+    def test_5_id_NaN(self):
+        '''Test for NaN as argument'''
+        b1 = Base(float("nan"))
+        self.assertNotEqual(b1.id, float("nan"))
 
-        self.assertTrue(os.path.isfile("Rectangle.json"))
-
-        with open("Rectangle.json", "r") as file:
-            json_content = json.load(file)
-
-        expected_json = [{"y": 8, "x": 2, "id": 4, "width": 10, "height": 7},
-                         {"y": 0, "x": 0, "id": 5, "width": 2, "height": 4}]
-        self.assertEqual(json_content, expected_json)
-
-        os.remove("Rectangle.json")
-
-    def test_from_json_string(self):
-        list_input = [
-            {'id': 89, 'width': 10, 'height': 4},
-            {'id': 7, 'width': 1, 'height': 7}
-            ]
-        json_list_input = Rectangle.to_json_string(list_input)
-        list_output = Rectangle.from_json_string(json_list_input)
-
-        self.assertEqual(type(list_input), list)
-        self.assertEqual(type(json_list_input), str)
-        self.assertEqual(type(list_output), list)
-        self.assertEqual(list_output, list_input)
-
-    def test_create_rectangle(self):
-
-        r1 = Rectangle(3, 5, 1)
-        r1_dictionary = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_dictionary)
-
-        self.assertEqual(r1.width, r2.width)
-        self.assertEqual(r1.height, r2.height)
-        self.assertEqual(r1.x, r2.x)
-        self.assertEqual(r1.y, r2.y)
-
-        self.assertIsNot(r1, r2)
+    def test_6_id_sameId(self):
+        '''Test for same ids'''
+        b1 = Base(22)
+        self.assertEqual(b1.id, 22)
+        b2 = Base(22)
+        self.assertEqual(b2.id, 22)
 
 
 if __name__ == '__main__':
