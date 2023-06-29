@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
+
 """
 Unittest for Base Class
 # run with python3 -m unittest discover tests
 # run with python3 -m unittest tests/test_models/test_base.py
 """
-=======
+=
 """Defines a class BaseModelTest"""
 
->>>>>>> ac7429addeb1990e51b2e33ac44a71198599897a
 
 import json
 import unittest
@@ -22,8 +21,6 @@ Rectangle = rectangle.Rectangle
 
 class TestBase(unittest.TestCase):
     """Tests for models/base.py"""
-
-<<<<<<< HEAD
     def setUp(self):
         pass
 
@@ -382,4 +379,3 @@ were given"
         self.assertEqual(str(r1), str(r2))
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
->>>>>>> ac7429addeb1990e51b2e33ac44a71198599897a
