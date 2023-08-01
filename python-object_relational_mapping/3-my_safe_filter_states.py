@@ -22,7 +22,8 @@ if __name__ == '__main__':
     cursor.execute(queries, (argv[4],))
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     cursor.close()
     db.close()
