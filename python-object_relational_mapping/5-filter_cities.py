@@ -24,8 +24,11 @@ if __name__ == '__main__':
             WHERE states.name = %s ORDER BY cities.id ASC"
     name = argv[4]
     cursor.execute(queries, (name, ))
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    rows = cursor.fetchone()
+
+    if rows[0]:
+        print(rows[0])
+    print("")
+
     cursor.close()
     db.close()
