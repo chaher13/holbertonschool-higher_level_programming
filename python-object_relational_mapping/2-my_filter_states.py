@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     queries = "SELECT * FROM states WHERE name = '{}'\
     ORDER BY id ASC".format(argv[4])
-    cursor.exec(queries)
+    cursor.execute(queries)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
