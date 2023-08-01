@@ -23,7 +23,8 @@ if __name__ == "__main__":
     session.add(new_state)
     session.commit()
 
-    insert_states = session.query(State).filter(State.name == "Louisiana").one()
+    insert_states = session.query(State)\
+        .filter(State.name == "Louisiana").one()
     print(insert_states.id)
 
     session.close()
