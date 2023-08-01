@@ -18,12 +18,12 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
 
-    queries = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(queries, (argv[4],))
+    queries = "SELECT * FROM states WHERE name = %s ORDER BY id ASC;"
+    name = argv[4]
+    cursor.execute(queries, (name,))
     rows = cursor.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
