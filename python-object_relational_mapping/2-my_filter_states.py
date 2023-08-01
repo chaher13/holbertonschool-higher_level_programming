@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
 
-    queries = "SELECT * FROM states WHERE name = '{}'\
+    queries = "SELECT * FROM states WHERE name LIKE '{}'\
     ORDER BY id ASC".format(argv[4])
     cursor.execute(queries)
     rows = cursor.fetchall()
