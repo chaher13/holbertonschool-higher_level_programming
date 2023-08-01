@@ -27,8 +27,8 @@ if __name__ == '__main__':
     rows = cursor.fetchall()
 
     for row in rows:
-        comma = ','
-        print(comma.join(row[0]))
+
+        print(", ".join(row[0]))
 
     cursor.close()
     db.close()
