@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     queries = "SELECT cities.name\
-            FROM states JOIN cities ON states.id = cities.state_id\
+            FROM cities JOIN states ON states.id = cities.state_id\
             WHERE states.name = %s ORDER BY cities.id ASC"
     name = argv[4]
     cursor.execute(queries, (name, ))
